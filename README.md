@@ -52,8 +52,7 @@ directory with the file in it and run:
 
 You'll get a response like:
 
-    158-0.txt: UTF-8 Unicode (with BOM) text, with CRLF line
-    terminators
+    158-0.txt: UTF-8 Unicode (with BOM) text, with CRLF line terminators
 
 This tells us the file is in UTF-8, which is a good sign, but has
 a little block at the beginning, a BOM, that signals that.  Not really
@@ -136,8 +135,7 @@ And you'll get a long list of options.  Look over them, but there are
 only a few we need right now.  Mallet can do a lot more than
 topic-modeling, but what we need is only a few options.
 
-    ./mallet-2.0.8/bin/mallet import-dir --input EmmaChaps --output
-    Emma.mallet --remove-stopwords --keep-sequence
+    ./mallet-2.0.8/bin/mallet import-dir --input EmmaChaps --output Emma.mallet --remove-stopwords --keep-sequence
 
 Stopwords are really common English words that muck things up, like
 "the" and "a".  Most of what we read and write have these in them so
@@ -165,24 +163,9 @@ on
 [http://mallet.cs.umass.edu/topics.php](http://mallet.cs.umass.edu/topics.php) so
 play with them later, but for now, type this:
 
-    ./mallet-2.0.8/bin/mallet train-topics --input Emma.mallet
-    --num-topics 10 --output-topic-keys keys.tsv --output-doc-topics
-    doc-topics.tsv --optimize-interval 10
+    ./mallet-2.0.8/bin/mallet train-topics --input Emma.mallet --num-topics 10 --output-topic-keys keys.tsv --output-doc-topics doc-topics.tsv --optimize-interval 10
 
-The flag `--num-topics` gives the number of topics to model.
-The "keys" that are output are the first few words associated with
-each topic and the "doc-topics" are the topics associated with
-each topic.  The flag `--optimize-interval` tweaks the training
-program to make the topics fit a bit better.  Programming Historian
-suggests 20, the Mallet page suggests 10; it's all voodoo unless you
-spend more time studying the algorithm.  That's it!  You've done it!
-Now open the files up and take a look at the topic you've generated.
-A word on the stream of text that comes out when you run that command,
-the `LL/token` value is how well the topics fit the text.  A higher
-number is better, but notice that they're *negative* so when it runs
-it will probably go from somewhere around -9 to -8.523.  Among other
-things, you could fiddle with optimization intervals and the number of
-topics to make a better fit.
+The flag `--num-topics` gives the number of topics to model.  The "keys" that are output are the first few words associated with each topic and the "doc-topics" are the topics associated with each topic.  The flag `--optimize-interval` tweaks the training program to make the topics fit a bit better.  Programming Historian suggests 20, the Mallet page suggests 10; it's all voodoo unless you spend more time studying the algorithm.  That's it!  You've done it!  Now open the files up and take a look at the topic you've generated.  A word on the stream of text that comes out when you run that command, the `LL/token` value is how well the topics fit the text.  A higher number is better, but notice that they're *negative* so when it runs it will probably go from somewhere around -9 to -8.523.  Among other things, you could fiddle with optimization intervals and the number of topics to make a better fit.
 
 For extra fun, try generating other numbers of topics or cutting
 a text up another way.  This command will split a text by paragraphs:
