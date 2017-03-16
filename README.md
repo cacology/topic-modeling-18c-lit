@@ -12,6 +12,8 @@ Unix-based operating system.  POSIX provides a wide range of extremely
 useful tools for manipulating plain text, but I'm sure you could use
 another platform; I just can't tell you how to do it.
 
+## Finding a Text
+
 The first thing to do is to find the text or texts that
 you want to work with.  There are a couple of great sources:
 
@@ -41,6 +43,15 @@ novel [Emma](http://www.gutenberg.org/ebooks/158).  The best format to
 work with is the "Plain Text UTF-8".
 Download that [one](http://www.gutenberg.org/files/158/158-0.txt), or
 get it from this repository.
+
+## Voyant
+
+With the text, you can just put it
+into [Voyant](http://voyant-tools.org) from your browser.  This is
+good enough for many cases, but also a great place to start before
+doing the more intensive work of using Mallet.
+
+## Mallet
 
 You'll need to use the command line, so if you don't know it, there's
 a good
